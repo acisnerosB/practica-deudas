@@ -1,0 +1,6 @@
+<mat-card>
+  <h2>Alertar Vencimiento</h2>
+  <p *ngFor="let deuda of deudasVencidas">
+    La deuda con número de documento {{ deuda.numeroDocumento }} ha vencido hoy.
+  </p>
+</mat-card>

@@ -1,0 +1,10 @@
+<mat-card>
+  <h2>Marcar como Pagado</h2>
+  <mat-list>
+    <mat-list-item *ngFor="let deuda of deudas" (click)="marcarComoPagado(deuda)">
+      <h3 matLine>{{ deuda.numeroDocumento }} - {{ deuda.empresa }}</h3>
+      <p matLine>Monto: {{ deuda.monto }} - Vence: {{ deuda.fechaVencimiento | date }}</p>
+      <p matLine>Estado: {{ deuda.pagada ? 'Pagada' : 'No pagada' }}</p>
+    </mat-list-item>
+  </mat-list>
+</mat-card>

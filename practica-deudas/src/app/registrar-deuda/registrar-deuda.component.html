@@ -1,0 +1,24 @@
+<mat-card>
+  <h2>Registrar Deuda</h2>
+  <form (ngSubmit)="onSubmit()">
+    <mat-form-field>
+      <mat-label>Número de Documento</mat-label>
+      <input matInput [(ngModel)]="deuda.numeroDocumento" name="numeroDocumento" required>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Empresa</mat-label>
+      <input matInput [(ngModel)]="deuda.empresa" name="empresa" required>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Monto a Pagar</mat-label>
+      <input matInput type="number" [(ngModel)]="deuda.monto" name="monto" required>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Fecha de Vencimiento</mat-label>
+      <input matInput [matDatepicker]="picker" [(ngModel)]="deuda.fechaVencimiento" name="fechaVencimiento" required>
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+    <button mat-raised-button type="submit">Registrar</button>
+  </form>
+</mat-card>
